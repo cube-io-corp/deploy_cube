@@ -4,6 +4,8 @@ kind: VirtualService
 metadata:
   name: cube
   namespace: {{ .Values.namespace }}
+  labels:
+    app: cube
 spec:
   gateways:
   - {{ .Values.namespace }}-gateway
@@ -39,6 +41,8 @@ kind: VirtualService
 metadata:
   name: cube-pvt
   namespace: {{ .Values.namespace }}
+  labels:
+    app: cube
 spec:
   gateways:
   - {{ .Values.namespace }}-pvt-gateway

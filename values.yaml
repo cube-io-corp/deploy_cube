@@ -7,11 +7,18 @@ cube:
   cubewsImageTag: d775444fdb97bb9ca1a47e55b83fd30b9436d9ac-master
   cubeuiImageTag: d2865e0ca67d471e08f3399f261dc1dd5a2bbb89-master
   cubeuibackendImageTag: c86ae0ea38a4d2307da35c333177bf0cb9e4b0be-test
-  replica: 1
+  uibackendReplica: 1
+  replayReplica: 1
+  recordReplica: 1
+  mockReplica: 1
+  uiReplica: 1
   host: azureapp.meshdynamics.io
   solrCore: cube
   solrURL: http://SOLR_URL:8983/solr/
   springbootProfile: azure
+  springbootURL: jdbc:postgresql://SOME_URL:5432/DATABASE_NAME?schema=qui
+  springbootUsername: DATABASE_USERNAME
+  springbootpassword: PASSWORD_FOR_DB_USER
 
 redis:
   replica: 1

@@ -23,7 +23,7 @@ metadata:
   name: cubews-record-v1
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.cube.replica }}
+  replicas: {{ .Values.cube.recordReplica }}
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -114,7 +114,7 @@ metadata:
   name: cubews-mock-v1
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.cube.replica }}
+  replicas: {{ .Values.cube.mockReplica }}
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -205,7 +205,7 @@ metadata:
   name: cubews-replay-v1
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.cube.replica }}
+  replicas: {{ .Values.cube.replayReplica }}
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -295,7 +295,7 @@ metadata:
   name: cubeui-v1
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.cube.replica }}
+  replicas: {{ .Values.cube.uiReplica }}
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -349,7 +349,7 @@ metadata:
   name: cubeui-backend-v1
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: {{ .Values.cube.replica }}
+  replicas: {{ .Values.cube.uibackendReplica }}
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -370,6 +370,12 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "{{ .Values.cube.springbootProfile }}"
+        - name: spring.datasource.url
+          value: "{{ .Values.cube.springbootURL }}"
+        - name: spring.datasource.username
+          value: "{{ .Values.cube.springbootUsername }}"
+        - name: spring.datasource.password
+          value: "{{ .Values.cube.springbootpassword }}"
         resources:
           requests:
             memory: "640Mi"

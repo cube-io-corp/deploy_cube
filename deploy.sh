@@ -2,13 +2,13 @@
 
 init () {
 	#Download an install Istio
-	curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.2.5 sh -
-	for i in istio-1.2.5/install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
-	kubectl apply -f istio-1.2.5/install/kubernetes/istio-demo.yaml
+	curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.3.8 sh -
+	for i in istio-1.3.8/install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
+	kubectl apply -f istio-1.3.8/install/kubernetes/istio-demo.yaml
 	#Change logs location to /dev/stdout
-	helm template istio-1.2.5/install/kubernetes/helm/istio --namespace=istio-system -x templates/configmap.yaml --set global.proxy.accessLogFile="/dev/stdout" | kubectl replace -f -
+	helm template istio-1.3.8/install/kubernetes/helm/istio --namespace=istio-system -x templates/configmap.yaml --set global.proxy.accessLogFile="/dev/stdout" | kubectl replace -f -
 	#Cleanup
-	rm -rf istio-1.2.5
+	rm -rf istio-1.3.8
 	#Install cube Application
 	helm template . | kubectl apply -f -
 	GATEWAYIP=$(kubectl describe services istio-ingressgateway -n istio-system | grep "LoadBalancer Ingress" | awk '{print $3}')

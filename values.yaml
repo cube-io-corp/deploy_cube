@@ -4,9 +4,9 @@ namespace: cube
 
 cube:
   cubeDockerSecret: SOMESTRONGSECRET
-  cubewsImageTag: d775444fdb97bb9ca1a47e55b83fd30b9436d9ac-master
-  cubeuiImageTag: d2865e0ca67d471e08f3399f261dc1dd5a2bbb89-master
-  cubeuibackendImageTag: c86ae0ea38a4d2307da35c333177bf0cb9e4b0be-test
+  cubewsImageTag: 3196f4db64a250482f40044448460d1246b5a58c-master
+  cubeuiImageTag: bae5e47b183a5f50dfaca278c7f07ef94ea9ec8d-master
+  cubeuibackendImageTag: 78cf56ea65eee519d4d9abcfdbd5aba6501d4ed6-master
   uibackendReplica: 1
   replayReplica: 1
   recordReplica: 1

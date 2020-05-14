@@ -3,7 +3,7 @@
 namespace: cube
 
 cube:
-  cubeDockerSecret: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJtZHdhbG1hcnQiLCJwYXNzd29yZCI6IndhbG1hcnRAbWQiLCJlbWFpbCI6ImFha2FzaC5zaW5naGFsQG1lc2hkeW5hbWljcy5pbyIsImF1dGgiOiJiV1IzWVd4dFlYSjBPbmRoYkcxaGNuUkFiV1E9In19fQ==
+  cubeDockerSecret: SOMESTRONGSECRET
   cubewsImageTag: 70c2a51f534820c6fab977f3e6c31d21aa77e94c-master
   cubeuiImageTag: f4becadd69326b61aaf38decf599d3304f47d766-master
   cubeuibackendImageTag: bb9a0a70d7056c499a8ed52541185ef6303322c0-master

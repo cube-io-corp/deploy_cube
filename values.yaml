@@ -3,10 +3,10 @@
 namespace: cube
 
 cube:
-  cubeDockerSecret: SOMESTRONGSECRET
-  cubewsImageTag: 3196f4db64a250482f40044448460d1246b5a58c-master
-  cubeuiImageTag: bae5e47b183a5f50dfaca278c7f07ef94ea9ec8d-master
-  cubeuibackendImageTag: 78cf56ea65eee519d4d9abcfdbd5aba6501d4ed6-master
+  cubeDockerSecret: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJtZHdhbG1hcnQiLCJwYXNzd29yZCI6IndhbG1hcnRAbWQiLCJlbWFpbCI6ImFha2FzaC5zaW5naGFsQG1lc2hkeW5hbWljcy5pbyIsImF1dGgiOiJiV1IzWVd4dFlYSjBPbmRoYkcxaGNuUkFiV1E9In19fQ==
+  cubewsImageTag: 70c2a51f534820c6fab977f3e6c31d21aa77e94c-master
+  cubeuiImageTag: f4becadd69326b61aaf38decf599d3304f47d766-master
+  cubeuibackendImageTag: bb9a0a70d7056c499a8ed52541185ef6303322c0-master
   uibackendReplica: 1
   replayReplica: 1
   recordReplica: 1

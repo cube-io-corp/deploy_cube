@@ -12,7 +12,7 @@ cube:
   recordReplica: 1
   mockReplica: 1
   uiReplica: 1
-  host: azureapp.meshdynamics.io
+  host: "*"
   solrCore: cube
   solrURL: http://SOLR_URL:8983/solr/
   springbootProfile: azure

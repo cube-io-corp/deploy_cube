@@ -17,13 +17,16 @@ spec:
   selector:
     component: cubews-record
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cubews-record-v1
   namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.cube.recordReplica }}
+  selector:
+    matchLabels:
+      component: cubews-record
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -108,12 +111,15 @@ spec:
   selector:
     component: cubews-mock
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cubews-mock-v1
   namespace: {{ .Values.namespace }}
 spec:
+  selector:
+    matchLabels:
+      component: cubews-mock
   replicas: {{ .Values.cube.mockReplica }}
   strategy:
     rollingUpdate:
@@ -199,12 +205,15 @@ spec:
   selector:
     component: cubews-replay
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cubews-replay-v1
   namespace: {{ .Values.namespace }}
 spec:
+  selector:
+    matchLabels:
+      component: cubews-replay
   replicas: {{ .Values.cube.replayReplica }}
   strategy:
     rollingUpdate:
@@ -289,12 +298,15 @@ spec:
   selector:
     component: cubeui
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cubeui-v1
   namespace: {{ .Values.namespace }}
 spec:
+  selector:
+    matchLabels:
+      component: cubeui
   replicas: {{ .Values.cube.uiReplica }}
   strategy:
     rollingUpdate:
@@ -343,12 +355,15 @@ spec:
   selector:
     component: cubeui-backend
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cubeui-backend-v1
   namespace: {{ .Values.namespace }}
 spec:
+  selector:
+    matchLabels:
+      component: cubeui-backend
   replicas: {{ .Values.cube.uibackendReplica }}
   strategy:
     rollingUpdate:
@@ -473,7 +488,7 @@ data:
     slaveof redis-0.redis 6379
 
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: redis
@@ -482,6 +497,9 @@ metadata:
     app: cube
     component: redis
 spec:
+  selector:
+    matchLabels:
+      component: redis
   replicas: {{ .Values.redis.replica }}
   serviceName: redis
   template:

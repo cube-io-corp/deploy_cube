@@ -401,22 +401,22 @@ spec:
         ports:
         - containerPort: 8080
         livenessProbe:
-          failureThreshold: 3
+          failureThreshold: 5
           httpGet:
             path: /api/health
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 30
+          initialDelaySeconds: 40
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 1
         readinessProbe:
-          failureThreshold: 3
+          failureThreshold: 5
           httpGet:
             path: /api/health
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 5
+          initialDelaySeconds: 40
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 1

@@ -49,7 +49,7 @@ spec:
             memory: "512Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
+            memory: "5Gi"
             cpu: "1000m"
         ports:
         - containerPort: 8080
@@ -143,7 +143,7 @@ spec:
             memory: "512Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
+            memory: "5Gi"
             cpu: "1000m"
         ports:
         - containerPort: 8080
@@ -237,7 +237,7 @@ spec:
             memory: "512Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
+            memory: "5Gi"
             cpu: "1000m"
         ports:
         - containerPort: 8080
@@ -396,7 +396,7 @@ spec:
             memory: "640Mi"
             cpu: "250m"
           limits:
-            memory: "800Mi"
+            memory: "5Gi"
             cpu: "1000m"
         ports:
         - containerPort: 8080

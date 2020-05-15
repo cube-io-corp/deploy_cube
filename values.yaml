@@ -5,7 +5,7 @@ namespace: cube
 cube:
   cubeDockerSecret: SOMESTRONGSECRET
   cubewsImageTag: 70c2a51f534820c6fab977f3e6c31d21aa77e94c-master
-  cubeuiImageTag: f4becadd69326b61aaf38decf599d3304f47d766-master
+  cubeuiImageTag: 55b11f4bfb7ea6036693784b4dc4e0fead63b975-master
   cubeuibackendImageTag: bb9a0a70d7056c499a8ed52541185ef6303322c0-master
   uibackendReplica: 1
   replayReplica: 1

@@ -16,8 +16,8 @@ cube:
   solrCore: cube
   solrURL: http://solr-svc.solr.svc.cluster.local:8983/solr/
   springbootProfile: azure
-  springbootURL: jdbc:postgresql://postgresql.postgres.svc.cluster.local:5432/DATABASE_NAME?schema=qui
-  springbootUsername: DATABASE_USERNAME
+  springbootURL: jdbc:postgresql://postgresql.postgres.svc.cluster.local:5432/cubedb?schema=qui
+  springbootUsername: springboot
   springbootpassword: PASSWORD_FOR_DB_USER
 
 redis:

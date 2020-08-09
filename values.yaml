@@ -14,9 +14,9 @@ cube:
   uiReplica: 1
   host: "*"
   solrCore: cube
-  solrURL: http://SOLR_URL:8983/solr/
+  solrURL: http://solr-svc.solr.svc.cluster.local:8983/solr/
   springbootProfile: azure
-  springbootURL: jdbc:postgresql://SOME_URL:5432/DATABASE_NAME?schema=qui
+  springbootURL: jdbc:postgresql://postgresql.postgres.svc.cluster.local:5432/DATABASE_NAME?schema=qui
   springbootUsername: DATABASE_USERNAME
   springbootpassword: PASSWORD_FOR_DB_USER
 

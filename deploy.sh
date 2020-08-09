@@ -5,7 +5,7 @@ init () {
 	curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.3.8 sh -
 	kubectl create namespace istio-system
 	for i in istio-1.3.8/install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
-	helm template istio-1.3.8/install/kubernetes/helm/istio --name istio --namespace istio-system --set gateways.istio-ingressgateway.type="NodePort" --set global.proxy.accessLogFile="/dev/stdout" | kubectl apply -f -
+	helm template istio-1.3.8/install/kubernetes/helm/istio --name istio --namespace istio-system --set global.proxy.accessLogFile="/dev/stdout" | kubectl apply -f -
 	#Cleanup
 	rm -rf istio-1.3.8
 	#Install cube Application

@@ -341,6 +341,19 @@ spec:
 #################################################################################################
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: cube
+    component: cubeui-backend
+  name: cubeui-backend-config
+  namespace: {{ .Values.namespace }}
+data:
+  webCorsAllowedOrigins.txt: |-
+    {{ .Values.cube.allowedURL }}
+
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: cubeui-backend
@@ -391,6 +404,8 @@ spec:
           value: "{{ .Values.cube.springbootUsername }}"
         - name: spring.datasource.password
           value: "{{ .Values.cube.springbootpassword }}"
+        - name: allowed.origins.path
+          value: "/usr/local/tomcat/webCorsAllowedOrigins.txt"
         resources:
           requests:
             memory: "640Mi"
@@ -400,6 +415,9 @@ spec:
             cpu: "1000m"
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/usr/local/tomcat/webCorsAllowedOrigins.txt"
+          name: cubeui-backend-config
         livenessProbe:
           failureThreshold: 5
           httpGet:
@@ -420,6 +438,10 @@ spec:
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 1
+      volumes:
+      - name: cubeui-backend-config
+        configMap:
+         name: cubeui-backend-config
       imagePullSecrets:
       - name: regcred
 

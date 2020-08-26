@@ -19,6 +19,7 @@ cube:
   springbootURL: jdbc:postgresql://postgresql.postgres.svc.cluster.local:5432/cubedb?schema=qui
   springbootUsername: springboot
   springbootpassword: PASSWORD_FOR_DB_USER
+  allowedURL: https://demo.dev.cubecorp.io
 
 redis:
   replica: 1
